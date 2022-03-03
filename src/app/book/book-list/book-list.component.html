@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Book Table</h2>
+  <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
+  <button type="button" class="btn btn-success" routerLink="/books/create">Add</button>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of books, index as i">
+      <td>{{i + 1}}</td>
+      <td>{{book.title}}</td>
+      <td>{{book.author}}</td>
+      <td>
+        <button type="button" class="btn btn-info" [routerLink]="['books/view', book.id]">View</button> &nbsp;
+        <button type="button" class="btn btn-warning" [routerLink]="['books/edit', book.id]">Edit</button> &nbsp;
+        <button type="button" class="btn btn-danger" [routerLink]="['books/delete', book.id]">Delete</button> &nbsp;
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

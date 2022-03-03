@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Create New Book</h2>
+  <form [formGroup]="bookForm" (ngSubmit)="createBook()">
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" class="form-control" id="title" placeholder="Enter title" name="title" formControlName="title">
+      <small style="color: darkred" *ngIf="bookForm.controls['title'].hasError('required') && bookForm.controls['title'].touched">Title required.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="author">Author:</label>
+      <input type="text" class="form-control" id="author" placeholder="Enter author" name="author" formControlName="author">
+      <small style="color: darkred" *ngIf="bookForm.controls['author'].hasError('required') && bookForm.controls['author'].touched">Author required.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <input type="text" class="form-control" id="description" placeholder="Enter description" name="description" formControlName="description">
+      <small style="color: darkred" *ngIf="bookForm.controls['description'].hasError('required') && bookForm.controls['description'].touched">Description required.</small>
+    </div>
+
+    <button type="submit" class="btn btn-success">Add</button>
+    <button type="button" class="btn btn-primary" routerLink="">Back</button>
+  </form>
+</div>
+
